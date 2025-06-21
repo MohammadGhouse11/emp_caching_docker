@@ -72,7 +72,7 @@ public class GlobalExceptionHandler {
 
     }
 
-    @ExceptionHandler(Exception.class)
+  /*  @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleAllExceptions(Exception ex,HttpServletRequest request){
         ErrorResponse errorResponse = new ErrorResponse(
                 LocalDateTime.now(),
@@ -82,6 +82,6 @@ public class GlobalExceptionHandler {
                 request.getRequestURL().toString()
         );
         return new ResponseEntity<>(errorResponse,HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+    }*/
 
 }

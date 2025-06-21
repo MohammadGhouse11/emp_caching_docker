@@ -1,0 +1,5 @@
+change profiles active=docker
+skip tests: mvn clean package -DskipTests
+docker stop redis-cache
+docker rm redis-cache
+docker-compose up --build

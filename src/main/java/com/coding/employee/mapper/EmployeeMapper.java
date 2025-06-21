@@ -4,12 +4,14 @@ import com.coding.employee.dto.EmployeeDTO;
 import com.coding.employee.entity.Employee;
 
 public class EmployeeMapper {
-    public static EmployeeDTO mapToDTO(Employee emp){
-        EmployeeDTO dto= new EmployeeDTO();
-        dto.setName(emp.getName());
-        dto.setEmail(emp.getEmail());
-        dto.setDepartment(emp.getDepartment());
-        dto.setDesignation(emp.getDesignation());
+    public static EmployeeDTO mapToDTO(Employee employee){
+        EmployeeDTO dto = new EmployeeDTO();
+        dto.setId(employee.getId()); // Needed for caching key
+        dto.setName(employee.getName());
+        dto.setEmail(employee.getEmail());
+        dto.setDepartment(employee.getDepartment());
+        dto.setDesignation(employee.getDesignation());
+        dto.setSalary(employee.getSalary());
         return dto;
     }
 

@@ -1,10 +1,15 @@
 package com.coding.employee.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.*;
 
-public class EmployeeDTO {
+import java.io.Serializable;
+
+public class EmployeeDTO implements Serializable {
+    @JsonIgnore
+    private Long id;
     @NotBlank(message = "Name cannot be blank")
     private String name;
     @NotBlank(message = "Email cannot be blank")
@@ -22,12 +27,21 @@ public class EmployeeDTO {
     public EmployeeDTO() {
     }
 
-    public EmployeeDTO(String name, String email, String department, String designation, Double salary) {
+    public EmployeeDTO(Long id, String name, String email, String department, String designation, Double salary) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.department = department;
         this.designation = designation;
         this.salary = salary;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -73,7 +87,8 @@ public class EmployeeDTO {
     @Override
     public String toString() {
         return "EmployeeDTO{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", department='" + department + '\'' +
                 ", designation='" + designation + '\'' +

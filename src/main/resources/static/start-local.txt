@@ -1,0 +1,9 @@
+Open CMD and navigate to project path
+docker run -d --name redis -p 6379:6379 redis:latest
+docker ps
+docker exec -it redis redis-cli
+127.0.0.1:6379> PING
+response: PONG
+ENTER >> MONITOR
+Run the Spring Boot App locally
+Hit the APIS and observe redis CLI

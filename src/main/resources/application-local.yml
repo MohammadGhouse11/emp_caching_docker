@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/employee_dto
+    username: root
+    password: Ghouse@123
+  jpa:
+    hibernate:
+      ddl-auto: create
+  redis:
+    host: localhost
+    port: 6379
